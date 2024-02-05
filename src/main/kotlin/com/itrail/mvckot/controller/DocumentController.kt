@@ -27,4 +27,8 @@ class DocumentController( private val documentService: DocumentService ): IDocum
         return ResponseEntity( "Success delete document", HttpStatus.CONTINUE )
     }
 
+    override fun getLazyDocuments( page: Int , size: Int ):ResponseEntity<List<Document>>{
+        return ResponseEntity( documentService.getLazyDocuments( page, size ), HttpStatus.OK )
+    }
+
 }

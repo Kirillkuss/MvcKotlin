@@ -69,6 +69,6 @@ class CardPatient:Serializable  {
 
     @Hidden
     @OneToOne( cascade = arrayOf(CascadeType.ALL))
-    @JoinColumn(name = "pacient_id")
+    @JoinColumn(name = "patient_id")
     var patient:Patient = Patient()
 }

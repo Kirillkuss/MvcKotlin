@@ -22,4 +22,8 @@ class PatientController( private val patientService: PatientService ):IPatient {
         return ResponseEntity<Patient>( patientService.addPatient( patient, id ), HttpStatus.OK );
     }
 
+    override fun getLazyPatients( page: Int, size: Int ): ResponseEntity<List<Patient>>{
+        return ResponseEntity<List<Patient>>( patientService.getLazyPatients( page, size), HttpStatus.OK );
+    }
+
 }

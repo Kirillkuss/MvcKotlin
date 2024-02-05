@@ -18,5 +18,5 @@ class MvcKotApplication
     fun main(args: Array<String>) {
          val logger = LoggerFactory.getLogger(MvcKotApplication::class.java)
          runApplication<MvcKotApplication>(*args)
-         logger.info( "MvcKotApplication START!")
+         logger.info( "KotlinProd START!")
     }

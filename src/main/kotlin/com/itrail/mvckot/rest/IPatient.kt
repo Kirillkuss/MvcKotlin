@@ -33,4 +33,8 @@ interface IPatient {
     @Operation( description = "Добавить пациента", summary = "Добавить пациента")
     fun addPatient( @RequestBody  patient: Patient,
                     @RequestParam( name = "Ид документа") @Parameter( name = "Ид документа", example = "1") id: Long  ): ResponseEntity<Patient>;
+
+    @GetMapping("/list/{page}{size}")
+    @Operation( description = "ленивая загрузка пациентов", summary = "ленивая загрузка пациентов")
+    fun getLazyPatients( page: Int , size: Int ):ResponseEntity<List<Patient>>
 }

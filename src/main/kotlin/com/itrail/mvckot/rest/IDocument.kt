@@ -36,4 +36,8 @@ interface IDocument {
     @DeleteMapping( "/delete{id}")
     @Operation( description = "Удалить документ", summary = "Удалить документ")
     fun removeDocument( @PathVariable @Parameter( description = "ИД документа", example = "1") id: Long ): ResponseEntity<String>
+
+    @GetMapping("/list/{page}{size}")
+    @Operation( description = "Список документов", summary = "Список документов")
+    fun getLazyDocuments( page: Int , size: Int ): ResponseEntity<List<Document>>
 }
